@@ -7,8 +7,11 @@
     <title>Document</title>
 </head>
 <body>
+    <p>ID : {{$student->id}}</p>
+    <p>Nama : {{$student->name}}</p>
+    <p>Score : {{$student->score}}</p>
     <p>Kegiatan Ekstrakurikuler {{$student->name}} :</p>
-    @foreach ($activities as $activity)
+    @foreach ($student->activities as $activity)
         <p>{{$activity->name}} </p>
     @endforeach
 </body>

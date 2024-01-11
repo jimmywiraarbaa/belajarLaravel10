@@ -19,6 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [StudentController::class, 'index']);
 Route::get('/filter', [StudentController::class, 'filter']);
-Route::get('greeting/{id}', [StudentController::class, 'show']);
+Route::get('show/{id}', [StudentController::class, 'show'])->name('show');
 
 

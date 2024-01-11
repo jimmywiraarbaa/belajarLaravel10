@@ -17,14 +17,13 @@ class StudentController extends Controller
 
     public function filter(){
         $students = Student::where('score','>=',70)
-        ->where('name','LIKE','%j%')
+        ->where('name','LIKE','%a%')
         ->get();
         return view ('filter', compact('students'));
     }
 
     public function show($id){
         $student = Student::find($id);
-        $activities = $student->activities;
-        return view ('example', ['activities' => $activities, 'student' => $student]);
+        return view ('show', ['student' => $student]);
     }
 }
