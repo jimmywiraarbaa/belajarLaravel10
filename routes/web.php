@@ -25,3 +25,7 @@ Route::post('/create', [StudentController::class, 'store'])->name('store');
 Route::get('/edit/{student}', [StudentController::class, 'edit'])->name('edit');
 Route::patch('/update/{student}', [StudentController::class, 'update'])->name('update');
 Route::delete('/delete/{student}', [StudentController::class, 'delete'])->name('delete');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
