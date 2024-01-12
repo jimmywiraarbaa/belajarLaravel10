@@ -12,6 +12,7 @@
             <th>Id</th>
             <th>Nama</th>
             <th>Score</th>
+            <th>Action</th>
         </tr>
         @foreach ($students as $student)
             <tr>
@@ -22,6 +23,17 @@
                     </a>
                 </td>
                 <td>{{$student->score}}</td>
+                <td>
+                    <form action="{{route('edit', $student)}}" method="get">
+                        @csrf
+                        <button type="submit">Edit</button>
+                    </form>
+                    <form action="{{route('delete', $student)}}" method="post">
+                        @method('delete')
+                        @csrf
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
             </tr>
         @endforeach
     </table>
