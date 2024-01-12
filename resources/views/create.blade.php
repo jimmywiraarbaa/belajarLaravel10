@@ -17,6 +17,8 @@
             </ul>
         </div>
     @endif
+
+    <h1>Input Form</h1>
     <form action="{{route('store')}}" method="post">
         @csrf
         <input type="text" name="name" placeholder="name">
