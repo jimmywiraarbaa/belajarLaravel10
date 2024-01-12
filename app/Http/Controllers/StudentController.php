@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\Activity;
-use Faker\Factory as Faker;
 
 class StudentController extends Controller
 {
@@ -25,5 +25,25 @@ class StudentController extends Controller
     public function show($id){
         $student = Student::find($id);
         return view ('show', ['student' => $student]);
+    }
+
+    public function create(){
+        return view ('create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'score' => 'required'
+        ]);
+
+        Student::create([
+            'name' => $request->name,
+            'score' => $request->score,
+            'teacher_id' => 1
+        ]);
+
+        return Redirect::route('index');
     }
 }
