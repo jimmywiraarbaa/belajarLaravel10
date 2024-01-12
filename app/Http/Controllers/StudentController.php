@@ -58,4 +58,10 @@ class StudentController extends Controller
         ]);
         return redirect::route('index');
     }
+
+    public function delete(Student $student){
+        $student->delete();
+
+        return redirect::route('index');
+    }
 }
