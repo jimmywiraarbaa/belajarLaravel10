@@ -8,6 +8,9 @@
 </head>
 <body>
     @if (Auth::check())
+        <p>Name : {{$user->name}}</p>
+        <p>Email : {{$user->email}}</p>
+        <p>ID : {{$id}}</p>
         <form action="{{route('logout')}}" method="post">
             @csrf
             <button type="submit">Logout</button>
