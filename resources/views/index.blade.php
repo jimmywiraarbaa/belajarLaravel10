@@ -7,6 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+    <p>Locale : {{App::getLocale()}}</p>
+
+    <a href="{{route('set_locale', 'en')}}">English</a>
+    <br>
+    <a href="{{route('set_locale', 'id')}}">Indonesia</a>
+    <br>
+
     @if (Auth::check())
         <p>Name : {{$user->name}}</p>
         <p>Email : {{$user->email}}</p>
