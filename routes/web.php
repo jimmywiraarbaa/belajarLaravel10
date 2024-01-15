@@ -35,3 +35,4 @@ Route::middleware(['admin'])->group(function(){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/locale/{locale}', [App\Http\Controllers\LocaleController::class, 'set_locale'])->name('set_locale');
