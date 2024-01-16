@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>{{__('message.welcome')}}</h1>
     <p>Locale : {{App::getLocale()}}</p>
-
     <a href="{{route('set_locale', 'en')}}">English</a>
     <br>
     <a href="{{route('set_locale', 'id')}}">Indonesia</a>
