@@ -39,5 +39,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/locale/{locale}', [App\Http\Controllers\LocaleController::class, 'set_locale'])->name('set_locale');
 
 
-Route::get('picture/create', [PictureController::class,'create'])->name('picture.create');
-Route::post('picture/create', [PictureController::class,'store'])->name('picture.store');
+Route::get('/picture/create', [PictureController::class,'create'])->name('picture.create');
+Route::post('/picture/create', [PictureController::class,'store'])->name('picture.store');
+
+Route::get('/picture/{picture}', [PictureController::class,'show'])->name('picture.show');
