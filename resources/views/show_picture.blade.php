@@ -10,5 +10,10 @@
     <p>{{$picture->name}}</p>
     <p>{{$picture->path}}</p>
     <img src="{{$url}}" alt="" width="200px">
+    <form action="{{route('picture.delete', $picture)}}" method="post">
+        @method('delete')
+        @csrf
+        <button type="submit">Delete</button>
+    </form>
 </body>
 </html>
