@@ -43,3 +43,4 @@ Route::get('/picture/create', [PictureController::class,'create'])->name('pictur
 Route::post('/picture/create', [PictureController::class,'store'])->name('picture.store');
 
 Route::get('/picture/{picture}', [PictureController::class,'show'])->name('picture.show');
+Route::delete('/picture/{picture}', [PictureController::class,'delete'])->name('picture.delete');
